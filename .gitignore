@@ -19,6 +19,7 @@ final_project_ckpt.zip
 
 # Training run directories. Keep curated summaries/logs under results/.
 exp/
+outputs/
 
 # Runtime/editor noise
 *.log.tmp
