@@ -1,0 +1,11 @@
+{
+  "final_train_loss": 33.209,
+  "final_train_acc": 94.685,
+  "final_train_nll": 0.459,
+  "last_update": 30000,
+  "best_valid_acc": 91.494,
+  "best_valid_loss_at_best_acc": 37.362,
+  "best_valid_acc_update": 30000,
+  "final_valid_loss": 37.362,
+  "final_valid_acc": 91.494
+}

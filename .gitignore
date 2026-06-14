@@ -1,0 +1,25 @@
+# Python/cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Datasets and checkpoints
+final_project_data/
+final_project_ckpt/
+final_project_data.zip
+final_project_ckpt.zip
+*.pt
+*.pth
+*.ckpt
+
+# Training run directories. Keep curated summaries/logs under results/.
+exp/
+
+# Runtime/editor noise
+*.log.tmp
+.DS_Store

@@ -1,0 +1,239 @@
+/base/project/AudioVideo2Txt/main.py:23: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path="configs", config_name="video2text")
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/core/default_element.py:124: UserWarning: In 'audiovideo2text.yaml': Usage of deprecated keyword in package header '# @package _group_'.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/changes_to_package_header for more information
+  deprecation_warning(
+sys:1: UserWarning: 
+'audiovideo2text.yaml' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/main.py:94: UserWarning: 
+'audiovideo2text.yaml' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+[2026-06-13 05:44:18,714][main][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': json, 'log_file': None, 'tensorboard_logdir': 'tblog', 'wandb_project': None, 'azureml_logging': False, 'seed': 1337, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': '/base/project/AudioVideo2Txt', 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': c10d, 'ddp_comm_hook': none, 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': never, 'zero_sharding': none, 'fp16': '${common.fp16}', 'memory_efficient_fp16': '${common.memory_efficient_fp16}', 'tpu': '${common.tpu}', 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 0, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 1000, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 2, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': '${dataset.max_tokens}', 'batch_size_valid': '${dataset.batch_size}', 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 30000, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': True, 'update_freq': [1], 'lr': [0.001], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': 'checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 2, 'save_interval_updates': 0, 'keep_interval_updates': 1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': '${common.model_parallel_size}'}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': '${distributed_training.distributed_world_size}'}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'task': {'_name': 'av_hubert_pretraining', 'data': '/data2/final_project_data/30h_data', 'labels': ['wrd'], 'label_dir': '/data2/final_project_data/30h_data', 'label_rate': -1, 'sample_rate': 16000, 'normalize': True, 'enable_padding': False, 'max_sample_size': 500, 'min_sample_size': None, 'max_trim_sample_size': '${task.max_sample_size}', 'single_target': True, 'random_crop': False, 'pad_audio': True, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['video', 'audio'], 'is_s2s': True, 'tokenizer_bpe_name': 'sentencepiece', 'tokenizer_bpe_model': '/data2/final_project_data/spm1000/spm_unigram1000.model', 'fine_tuning': True}, 'model': {'_name': 'av_hubert_seq2seq', 'pretrained_path': '/data2/final_project_ckpt/pretrained_model.pth', 'apply_mask': False, 'mask_selection': 'static', 'mask_length': 10, 'mask_other': 0, 'mask_prob': 0.75, 'mask_channel_selection': 'static', 'mask_channel_length': 64, 'mask_channel_other': 0, 'mask_channel_prob': 0.5, 'layerdrop': 0.1, 'dropout': 0.0, 'activation_dropout': 0.1, 'attention_dropout': 0.0, 'feature_grad_mult': 1.0, 'modality_fuse': 'concat', 'modality_dropout': 0.05, 'audio_dropout': 0.3, 'modality_dropout_mode': 'span', 'modality_dropout_span_min': 10, 'modality_dropout_span_max': 30, 'decoder_layers': 6, 'decoder_dropout': 0.1, 'decoder_attention_dropout': 0.0, 'decoder_activation_dropout': 0.1, 'freeze_finetune_updates': 24000, 'share_decoder_input_output_embed': True, 'decoder_normalize_before': True}, 'criterion': {'_name': 'label_smoothed_cross_entropy', 'report_accuracy': True, 'label_smoothing': 0.1, 'focal_gamma': 0.0, 'confidence_penalty': 0.0, 'ignore_prefix_size': 0, 'sentence_avg': '${optimization.sentence_avg}'}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-08, 'weight_decay': 0.0, "use_old_adam'": False, 'tpu': '${common.tpu}', 'lr': '${optimization.lr}'}, 'lr_scheduler': {'_name': 'tri_stage', 'warmup_steps': 10000, 'hold_steps': 0, 'decay_steps': 20000, 'final_lr_scale': 0.05, 'phase_ratio': '???', 'init_lr_scale': 0.01, 'max_update': '${optimization.max_update}', 'lr': '${optimization.lr}'}, 'scoring': None, 'bpe': None, 'tokenizer': None}
+[2026-06-13 05:44:19,614][models.encoder_backbone][INFO] - EncoderBackbone Config: {'_name': 'av_hubert', 'label_rate': 25, 'input_modality': '${task.input_modality}', 'extractor_mode': default, 'encoder_layers': 12, 'encoder_embed_dim': 768, 'encoder_ffn_embed_dim': 3072, 'encoder_attention_heads': 12, 'activation_fn': gelu, 'dropout': 0.0, 'attention_dropout': 0.0, 'activation_dropout': 0.1, 'encoder_layerdrop': 0.1, 'dropout_input': 0.0, 'dropout_features': 0.1, 'final_dim': 256, 'untie_final_proj': True, 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'logit_temp': 0.1, 'target_glu': False, 'feature_grad_mult': 1.0, 'mask_length_audio': 10, 'mask_prob_audio': 0.8, 'mask_length_image': 5, 'mask_prob_image': 0.3, 'mask_selection': static, 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 64, 'mask_channel_prob': 0.0, 'mask_channel_selection': static, 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'latent_temp': [2.0, 0.5, 0.999995], 'skip_masked': False, 'skip_nomask': False, 'resnet_relu_type': 'prelu', 'resnet_weights': None, 'sim_type': 'cosine', 'sub_encoder_layers': 0, 'audio_feat_dim': 104, 'modality_dropout': 0.05, 'audio_dropout': 0.3, 'modality_dropout_mode': 'sample', 'modality_dropout_span_min': 10, 'modality_dropout_span_max': 30, 'modality_fuse': 'concat', 'selection_type': 'same_seq', 'masking_type': 'input', 'decoder_embed_dim': 768, 'decoder_ffn_embed_dim': 3072, 'decoder_layers': 6, 'decoder_layerdrop': 0.0, 'decoder_attention_heads': 4, 'decoder_learned_pos': False, 'decoder_normalize_before': False, 'no_token_positional_embeddings': False, 'decoder_dropout': 0.1, 'decoder_attention_dropout': 0.1, 'decoder_activation_dropout': 0.0, 'max_target_positions': 2048, 'share_decoder_input_output_embed': False, 'no_scale_embedding': True, 'apply_mask': False, 'mask_prob': 0.0, 'mask_length': 10}
+/opt/conda/envs/rzd/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:30: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+[2026-06-13 05:44:20,676][models.audio_video_model][INFO] - _IncompatibleKeys(missing_keys=[], unexpected_keys=['mask_emb', 'label_embs_concat', 'final_proj.weight', 'final_proj.bias'])
+[2026-06-13 05:44:21,089][main][INFO] - AudioVideoModel(
+  (encoder): EncoderBackboneWrapper(
+    (pretrained_model): EncoderBackbone(
+      (feature_extractor_audio): AudioEncoder(
+        (proj): Linear(in_features=104, out_features=768, bias=True)
+      )
+      (feature_extractor_video): ResEncoder(
+        (frontend3D): Sequential(
+          (0): Conv3d(1, 64, kernel_size=(5, 7, 7), stride=(1, 2, 2), padding=(2, 3, 3), bias=False)
+          (1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): PReLU(num_parameters=64)
+          (3): MaxPool3d(kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), dilation=1, ceil_mode=False)
+        )
+        (trunk): ResNet(
+          (layer1): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=64)
+              (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=64)
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=64)
+              (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=64)
+            )
+          )
+          (layer2): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=128)
+              (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=128)
+              (downsample): Sequential(
+                (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=128)
+              (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=128)
+            )
+          )
+          (layer3): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=256)
+              (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=256)
+              (downsample): Sequential(
+                (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=256)
+              (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=256)
+            )
+          )
+          (layer4): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=512)
+              (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=512)
+              (downsample): Sequential(
+                (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=512)
+              (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=512)
+            )
+          )
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+        )
+        (proj): Linear(in_features=512, out_features=768, bias=True)
+      )
+      (post_extract_proj): Linear(in_features=1536, out_features=768, bias=True)
+      (encoder): TransformerEncoder(
+        (pos_conv): Sequential(
+          (0): Conv1d(768, 768, kernel_size=(128,), stride=(1,), padding=(64,), groups=16)
+          (1): SamePad()
+          (2): GELU(approximate='none')
+        )
+        (layers): ModuleList(
+          (0-11): 12 x TransformerSentenceEncoderLayer(
+            (self_attn): MultiheadAttention(
+              (dropout_module): Dropout(p=0.0, inplace=False)
+              (k_proj): Linear(in_features=768, out_features=768, bias=True)
+              (v_proj): Linear(in_features=768, out_features=768, bias=True)
+              (q_proj): Linear(in_features=768, out_features=768, bias=True)
+              (out_proj): Linear(in_features=768, out_features=768, bias=True)
+            )
+            (dropout1): Dropout(p=0.0, inplace=False)
+            (dropout2): Dropout(p=0.1, inplace=False)
+            (dropout3): Dropout(p=0.0, inplace=False)
+            (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (fc1): Linear(in_features=768, out_features=3072, bias=True)
+            (fc2): Linear(in_features=3072, out_features=768, bias=True)
+            (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (layer_norm): LayerNorm((1536,), eps=1e-05, elementwise_affine=True)
+      (dropout_input): Dropout(p=0.0, inplace=False)
+      (dropout_features): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (decoder): TransformerDecoder(
+    (embed_tokens): Embedding(1000, 768, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0-5): 6 x TransformerDecoderLayer(
+        (dropout_module): Dropout(p=0.1, inplace=False)
+        (self_attn): MultiheadAttention(
+          (dropout_module): Dropout(p=0.0, inplace=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): Dropout(p=0.1, inplace=False)
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): Dropout(p=0.0, inplace=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-06-13 05:44:21,091][main][INFO] - model: AudioVideoModel
+[2026-06-13 05:44:21,091][main][INFO] - criterion: LabelSmoothedCrossEntropyCriterion
+[2026-06-13 05:44:21,092][main][INFO] - num. shared model params: 160,100,480 (num. trained: 160,100,480)
+[2026-06-13 05:44:21,094][main][INFO] - num. expert model params: 0 (num. trained: 0)
+[2026-06-13 05:44:21,094][dataset][INFO] - Using tokenizer
+[2026-06-13 05:44:21,138][dataset][INFO] - max_keep=500, min_keep=None, loaded 30782, skipped 0 short and 0 long and 0 unaligned, longest-loaded=155, shortest-loaded=12
+[2026-06-13 05:44:21,139][dataset][INFO] - image transform: Compose(
+    Normalize(mean=0.0, std=255.0)
+    RandomCrop(size=(88, 88))
+    <utils.model_utils.HorizontalFlip object at 0x7f4a38bbafb0>
+    Normalize(mean=0.421, std=0.165)
+)
+[2026-06-13 05:44:21,147][dataset][INFO] - pad_audio=True, random_crop=False, normalize=True, max_sample_size=500, seqs2seq data=True,
+[2026-06-13 05:44:21,147][dataset][INFO] - Using tokenizer
+[2026-06-13 05:44:21,151][dataset][INFO] - max_keep=500, min_keep=None, loaded 1200, skipped 0 short and 0 long and 0 unaligned, longest-loaded=155, shortest-loaded=17
+[2026-06-13 05:44:21,151][dataset][INFO] - image transform: Compose(
+    Normalize(mean=0.0, std=255.0)
+    <utils.model_utils.CenterCrop object at 0x7f4a38bba8c0>
+    Normalize(mean=0.421, std=0.165)
+)
+[2026-06-13 05:44:21,153][dataset][INFO] - pad_audio=True, random_crop=False, normalize=True, max_sample_size=500, seqs2seq data=True,
+[2026-06-13 05:44:21,828][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.0.conv1.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.0.conv2.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.1.conv1.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.1.conv2.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.conv1.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.conv2.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.downsample.0.bias
+[2026-06-13 05:44:21,829][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.1.conv1.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.1.conv2.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.conv1.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.conv2.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.downsample.0.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.1.conv1.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.1.conv2.bias
+[2026-06-13 05:44:21,830][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.conv1.bias
+[2026-06-13 05:44:21,831][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.conv2.bias
+[2026-06-13 05:44:21,831][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.downsample.0.bias
+[2026-06-13 05:44:21,831][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.1.conv1.bias
+[2026-06-13 05:44:21,831][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.1.conv2.bias
+[2026-06-13 05:44:21,831][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2026-06-13 05:44:21,831][fairseq.utils][INFO] - rank   0: capabilities =  9.0  ; total memory = 79.179 GB ; name = NVIDIA H100 80GB HBM3                   
+[2026-06-13 05:44:21,831][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2026-06-13 05:44:21,831][main][INFO] - training on 1 devices (GPUs/TPUs)
+[2026-06-13 05:44:21,832][main][INFO] - max tokens per device = 1000 and max sentences per device = None
+[2026-06-13 05:44:21,832][trainer][INFO] - Preparing to load checkpoint checkpoints/checkpoint_last.pt
+[2026-06-13 05:44:21,832][trainer][INFO] - No existing checkpoint found checkpoints/checkpoint_last.pt
+[2026-06-13 05:44:22,699][trainer][INFO] - begin training epoch 1
+[2026-06-13 05:44:22,699][main][INFO] - Start iterating over samples

@@ -1,0 +1,11 @@
+{
+  "model": "video+audio (av2t)",
+  "train_loss": 33.209,
+  "train_acc": 94.685,
+  "valid_loss": 37.362,
+  "valid_acc": 91.494,
+  "inference_wer": 13.853,
+  "wer_errors": 1867,
+  "wer_ref_words": 13477,
+  "baseline": {"train_loss": 33.91, "train_acc": 94.40, "valid_loss": 37.33, "valid_acc": 91.55, "inference_wer": 15.17}
+}

@@ -1,0 +1,352 @@
+/base/project/AudioVideo2Txt/main.py:27: UserWarning: 
+The version_base parameter is not specified.
+Please specify a compatability version level, or None.
+Will assume defaults for version 1.1
+  @hydra.main(config_path="configs", config_name="video2text")
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/core/default_element.py:124: UserWarning: In 'audiovideo2text.yaml': Usage of deprecated keyword in package header '# @package _group_'.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/changes_to_package_header for more information
+  deprecation_warning(
+sys:1: UserWarning: 
+'audiovideo2text.yaml' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/main.py:94: UserWarning: 
+'audiovideo2text.yaml' is validated against ConfigStore schema with the same name.
+This behavior is deprecated in Hydra 1.1 and will be removed in Hydra 1.2.
+See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/automatic_schema_matching for migration instructions.
+  _run_hydra(
+/opt/conda/envs/rzd/lib/python3.10/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+[2026-06-13 11:44:08,738][main][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': json, 'log_file': None, 'tensorboard_logdir': 'tblog', 'wandb_project': None, 'azureml_logging': False, 'seed': 1337, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': '/base/project/AudioVideo2Txt', 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': c10d, 'ddp_comm_hook': none, 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': never, 'zero_sharding': none, 'fp16': '${common.fp16}', 'memory_efficient_fp16': '${common.memory_efficient_fp16}', 'tpu': '${common.tpu}', 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 0, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': 1000, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 2, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': '${dataset.max_tokens}', 'batch_size_valid': '${dataset.batch_size}', 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 30000, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': True, 'update_freq': [1], 'lr': [0.001], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': 'checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 2, 'save_interval_updates': 0, 'keep_interval_updates': 1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'accuracy', 'maximize_best_checkpoint_metric': True, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': '${common.model_parallel_size}'}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': '${distributed_training.distributed_world_size}'}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'task': {'_name': 'av_hubert_pretraining', 'data': '/data2/final_project_data/30h_data', 'labels': ['wrd'], 'label_dir': '/data2/final_project_data/30h_data', 'label_rate': -1, 'sample_rate': 16000, 'normalize': True, 'enable_padding': False, 'max_sample_size': 500, 'min_sample_size': None, 'max_trim_sample_size': '${task.max_sample_size}', 'single_target': True, 'random_crop': False, 'pad_audio': True, 'pdb': False, 'stack_order_audio': 4, 'skip_verify': False, 'image_aug': True, 'image_crop_size': 88, 'image_mean': 0.421, 'image_std': 0.165, 'modalities': ['video', 'audio'], 'is_s2s': True, 'tokenizer_bpe_name': 'sentencepiece', 'tokenizer_bpe_model': '/data2/final_project_data/spm1000/spm_unigram1000.model', 'fine_tuning': True}, 'model': {'_name': 'av_hubert_seq2seq', 'pretrained_path': '/data2/final_project_ckpt/pretrained_model.pth', 'apply_mask': True, 'mask_selection': 'static', 'mask_length': 10, 'mask_other': 0, 'mask_prob': 0.05, 'mask_channel_selection': 'static', 'mask_channel_length': 64, 'mask_channel_other': 0, 'mask_channel_prob': 0.0, 'layerdrop': 0.1, 'dropout': 0.0, 'activation_dropout': 0.1, 'attention_dropout': 0.0, 'feature_grad_mult': 1.0, 'modality_fuse': 'concat', 'modality_dropout': 0.0, 'audio_dropout': 0.5, 'modality_dropout_mode': 'sample', 'modality_dropout_span_min': 10, 'modality_dropout_span_max': 30, 'decoder_layers': 6, 'decoder_dropout': 0.1, 'decoder_attention_dropout': 0.0, 'decoder_activation_dropout': 0.1, 'freeze_finetune_updates': 24000, 'share_decoder_input_output_embed': True, 'decoder_normalize_before': True}, 'criterion': {'_name': 'label_smoothed_cross_entropy', 'report_accuracy': True, 'label_smoothing': 0.1, 'focal_gamma': 0.0, 'confidence_penalty': 0.0, 'ignore_prefix_size': 0, 'sentence_avg': '${optimization.sentence_avg}'}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.98)', 'adam_eps': 1e-08, 'weight_decay': 0.0, "use_old_adam'": False, 'tpu': '${common.tpu}', 'lr': '${optimization.lr}'}, 'lr_scheduler': {'_name': 'tri_stage', 'warmup_steps': 10000, 'hold_steps': 0, 'decay_steps': 20000, 'final_lr_scale': 0.05, 'phase_ratio': '???', 'init_lr_scale': 0.01, 'max_update': '${optimization.max_update}', 'lr': '${optimization.lr}'}, 'scoring': None, 'bpe': None, 'tokenizer': None}
+[2026-06-13 11:44:09,607][models.encoder_backbone][INFO] - EncoderBackbone Config: {'_name': 'av_hubert', 'label_rate': 25, 'input_modality': '${task.input_modality}', 'extractor_mode': default, 'encoder_layers': 12, 'encoder_embed_dim': 768, 'encoder_ffn_embed_dim': 3072, 'encoder_attention_heads': 12, 'activation_fn': gelu, 'dropout': 0.0, 'attention_dropout': 0.0, 'activation_dropout': 0.1, 'encoder_layerdrop': 0.1, 'dropout_input': 0.0, 'dropout_features': 0.1, 'final_dim': 256, 'untie_final_proj': True, 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'logit_temp': 0.1, 'target_glu': False, 'feature_grad_mult': 1.0, 'mask_length_audio': 10, 'mask_prob_audio': 0.8, 'mask_length_image': 5, 'mask_prob_image': 0.3, 'mask_selection': static, 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 64, 'mask_channel_prob': 0.0, 'mask_channel_selection': static, 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'latent_temp': [2.0, 0.5, 0.999995], 'skip_masked': False, 'skip_nomask': False, 'resnet_relu_type': 'prelu', 'resnet_weights': None, 'sim_type': 'cosine', 'sub_encoder_layers': 0, 'audio_feat_dim': 104, 'modality_dropout': 0.0, 'audio_dropout': 0.5, 'modality_dropout_mode': 'sample', 'modality_dropout_span_min': 10, 'modality_dropout_span_max': 30, 'modality_fuse': 'concat', 'selection_type': 'same_seq', 'masking_type': 'input', 'decoder_embed_dim': 768, 'decoder_ffn_embed_dim': 3072, 'decoder_layers': 6, 'decoder_layerdrop': 0.0, 'decoder_attention_heads': 4, 'decoder_learned_pos': False, 'decoder_normalize_before': False, 'no_token_positional_embeddings': False, 'decoder_dropout': 0.1, 'decoder_attention_dropout': 0.1, 'decoder_activation_dropout': 0.0, 'max_target_positions': 2048, 'share_decoder_input_output_embed': False, 'no_scale_embedding': True, 'apply_mask': True, 'mask_prob': 0.05, 'mask_length': 10}
+/opt/conda/envs/rzd/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:30: UserWarning: torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.
+  warnings.warn("torch.nn.utils.weight_norm is deprecated in favor of torch.nn.utils.parametrizations.weight_norm.")
+[2026-06-13 11:44:10,598][models.audio_video_model][INFO] - _IncompatibleKeys(missing_keys=[], unexpected_keys=['mask_emb', 'label_embs_concat', 'final_proj.weight', 'final_proj.bias'])
+[2026-06-13 11:44:11,032][main][INFO] - AudioVideoModel(
+  (encoder): EncoderBackboneWrapper(
+    (pretrained_model): EncoderBackbone(
+      (feature_extractor_audio): AudioEncoder(
+        (proj): Linear(in_features=104, out_features=768, bias=True)
+      )
+      (feature_extractor_video): ResEncoder(
+        (frontend3D): Sequential(
+          (0): Conv3d(1, 64, kernel_size=(5, 7, 7), stride=(1, 2, 2), padding=(2, 3, 3), bias=False)
+          (1): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): PReLU(num_parameters=64)
+          (3): MaxPool3d(kernel_size=(1, 3, 3), stride=(1, 2, 2), padding=(0, 1, 1), dilation=1, ceil_mode=False)
+        )
+        (trunk): ResNet(
+          (layer1): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=64)
+              (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=64)
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=64)
+              (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=64)
+            )
+          )
+          (layer2): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=128)
+              (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=128)
+              (downsample): Sequential(
+                (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=128)
+              (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=128)
+            )
+          )
+          (layer3): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=256)
+              (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=256)
+              (downsample): Sequential(
+                (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=256)
+              (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=256)
+            )
+          )
+          (layer4): Sequential(
+            (0): BasicBlock(
+              (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=512)
+              (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=512)
+              (downsample): Sequential(
+                (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+                (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              )
+            )
+            (1): BasicBlock(
+              (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu1): PReLU(num_parameters=512)
+              (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+              (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (relu2): PReLU(num_parameters=512)
+            )
+          )
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+        )
+        (proj): Linear(in_features=512, out_features=768, bias=True)
+      )
+      (post_extract_proj): Linear(in_features=1536, out_features=768, bias=True)
+      (encoder): TransformerEncoder(
+        (pos_conv): Sequential(
+          (0): Conv1d(768, 768, kernel_size=(128,), stride=(1,), padding=(64,), groups=16)
+          (1): SamePad()
+          (2): GELU(approximate='none')
+        )
+        (layers): ModuleList(
+          (0-11): 12 x TransformerSentenceEncoderLayer(
+            (self_attn): MultiheadAttention(
+              (dropout_module): Dropout(p=0.0, inplace=False)
+              (k_proj): Linear(in_features=768, out_features=768, bias=True)
+              (v_proj): Linear(in_features=768, out_features=768, bias=True)
+              (q_proj): Linear(in_features=768, out_features=768, bias=True)
+              (out_proj): Linear(in_features=768, out_features=768, bias=True)
+            )
+            (dropout1): Dropout(p=0.0, inplace=False)
+            (dropout2): Dropout(p=0.1, inplace=False)
+            (dropout3): Dropout(p=0.0, inplace=False)
+            (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+            (fc1): Linear(in_features=768, out_features=3072, bias=True)
+            (fc2): Linear(in_features=3072, out_features=768, bias=True)
+            (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (layer_norm): LayerNorm((1536,), eps=1e-05, elementwise_affine=True)
+      (dropout_input): Dropout(p=0.0, inplace=False)
+      (dropout_features): Dropout(p=0.1, inplace=False)
+    )
+  )
+  (decoder): TransformerDecoder(
+    (embed_tokens): Embedding(1000, 768, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0-5): 6 x TransformerDecoderLayer(
+        (dropout_module): Dropout(p=0.1, inplace=False)
+        (self_attn): MultiheadAttention(
+          (dropout_module): Dropout(p=0.0, inplace=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): Dropout(p=0.1, inplace=False)
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): Dropout(p=0.0, inplace=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  )
+)
+[2026-06-13 11:44:11,034][main][INFO] - model: AudioVideoModel
+[2026-06-13 11:44:11,035][main][INFO] - criterion: LabelSmoothedCrossEntropyCriterion
+[2026-06-13 11:44:11,036][main][INFO] - num. shared model params: 160,100,480 (num. trained: 160,100,480)
+[2026-06-13 11:44:11,037][main][INFO] - num. expert model params: 0 (num. trained: 0)
+[2026-06-13 11:44:11,037][dataset][INFO] - Using tokenizer
+[2026-06-13 11:44:11,084][dataset][INFO] - max_keep=500, min_keep=None, loaded 30782, skipped 0 short and 0 long and 0 unaligned, longest-loaded=155, shortest-loaded=12
+[2026-06-13 11:44:11,085][dataset][INFO] - image transform: Compose(
+    Normalize(mean=0.0, std=255.0)
+    RandomCrop(size=(88, 88))
+    <utils.model_utils.HorizontalFlip object at 0x7f3391a4acb0>
+    Normalize(mean=0.421, std=0.165)
+)
+[2026-06-13 11:44:11,093][dataset][INFO] - pad_audio=True, random_crop=False, normalize=True, max_sample_size=500, seqs2seq data=True,
+[2026-06-13 11:44:11,093][dataset][INFO] - Using tokenizer
+[2026-06-13 11:44:11,097][dataset][INFO] - max_keep=500, min_keep=None, loaded 1200, skipped 0 short and 0 long and 0 unaligned, longest-loaded=155, shortest-loaded=17
+[2026-06-13 11:44:11,097][dataset][INFO] - image transform: Compose(
+    Normalize(mean=0.0, std=255.0)
+    <utils.model_utils.CenterCrop object at 0x7f3391a4b4f0>
+    Normalize(mean=0.421, std=0.165)
+)
+[2026-06-13 11:44:11,098][dataset][INFO] - pad_audio=True, random_crop=False, normalize=True, max_sample_size=500, seqs2seq data=True,
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.0.conv1.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.0.conv2.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.1.conv1.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer1.1.conv2.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.conv1.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.conv2.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.0.downsample.0.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.1.conv1.bias
+[2026-06-13 11:44:13,044][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer2.1.conv2.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.conv1.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.conv2.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.0.downsample.0.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.1.conv1.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer3.1.conv2.bias
+[2026-06-13 11:44:13,045][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.conv1.bias
+[2026-06-13 11:44:13,046][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.conv2.bias
+[2026-06-13 11:44:13,046][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.0.downsample.0.bias
+[2026-06-13 11:44:13,046][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.1.conv1.bias
+[2026-06-13 11:44:13,046][trainer][INFO] - detected shared parameter: encoder.pretrained_model.feature_extractor_video.frontend3D.0.bias <- encoder.pretrained_model.feature_extractor_video.trunk.layer4.1.conv2.bias
+[2026-06-13 11:44:13,046][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2026-06-13 11:44:13,047][fairseq.utils][INFO] - rank   0: capabilities =  9.0  ; total memory = 79.179 GB ; name = NVIDIA H100 80GB HBM3                   
+[2026-06-13 11:44:13,047][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2026-06-13 11:44:13,047][main][INFO] - training on 1 devices (GPUs/TPUs)
+[2026-06-13 11:44:13,047][main][INFO] - max tokens per device = 1000 and max sentences per device = None
+[2026-06-13 11:44:13,048][trainer][INFO] - Preparing to load checkpoint checkpoints/checkpoint_last.pt
+[2026-06-13 11:44:13,048][trainer][INFO] - No existing checkpoint found checkpoints/checkpoint_last.pt
+[2026-06-13 11:44:14,241][trainer][INFO] - begin training epoch 1
+[2026-06-13 11:44:14,241][main][INFO] - Start iterating over samples
+[2026-06-13 11:46:07,607][train_inner][INFO] - {"epoch": 1, "update": 0.063, "loss": "155.059", "nll_loss": "8.515", "total": "178.305", "n_correct": "10.71", "ppl": "365.82", "accuracy": "6.007", "wps": "316.8", "ups": "1.78", "wpb": "178.3", "bsz": "10.1", "num_updates": "200", "lr": "2.98e-05", "gnorm": "94.47", "loss_scale": "128", "train_wall": "21", "gb_free": "75.7", "wall": "115"}
+[2026-06-13 11:47:55,028][train_inner][INFO] - {"epoch": 1, "update": 0.126, "loss": "169.629", "nll_loss": "8.159", "total": "181.27", "n_correct": "11.4", "ppl": "285.87", "accuracy": "6.289", "wps": "337.5", "ups": "1.86", "wpb": "181.3", "bsz": "9", "num_updates": "400", "lr": "4.96e-05", "gnorm": "67.767", "loss_scale": "128", "train_wall": "15", "gb_free": "75.7", "wall": "222"}
+[2026-06-13 11:49:40,961][train_inner][INFO] - {"epoch": 1, "update": 0.189, "loss": "156.081", "nll_loss": "8.043", "total": "177.86", "n_correct": "13.435", "ppl": "263.77", "accuracy": "7.554", "wps": "335.8", "ups": "1.89", "wpb": "177.9", "bsz": "9.5", "num_updates": "600", "lr": "6.94e-05", "gnorm": "54.592", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "328"}
+[2026-06-13 11:51:31,105][train_inner][INFO] - {"epoch": 1, "update": 0.252, "loss": "149.532", "nll_loss": "7.892", "total": "179.33", "n_correct": "18.21", "ppl": "237.51", "accuracy": "10.154", "wps": "325.7", "ups": "1.82", "wpb": "179.3", "bsz": "9.9", "num_updates": "800", "lr": "8.92e-05", "gnorm": "50.856", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "438"}
+[2026-06-13 11:53:16,348][train_inner][INFO] - {"epoch": 1, "update": 0.315, "loss": "154", "nll_loss": "7.764", "total": "176.56", "n_correct": "20.175", "ppl": "217.33", "accuracy": "11.427", "wps": "335.6", "ups": "1.9", "wpb": "176.6", "bsz": "9.3", "num_updates": "1000", "lr": "0.000109", "gnorm": "50.564", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "543"}
+[2026-06-13 11:55:02,540][train_inner][INFO] - {"epoch": 1, "update": 0.378, "loss": "151.407", "nll_loss": "7.585", "total": "177.705", "n_correct": "22.63", "ppl": "192.05", "accuracy": "12.735", "wps": "334.7", "ups": "1.88", "wpb": "177.7", "bsz": "9.3", "num_updates": "1200", "lr": "0.0001288", "gnorm": "51.497", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "649"}
+[2026-06-13 11:56:56,197][train_inner][INFO] - {"epoch": 1, "update": 0.441, "loss": "138.818", "nll_loss": "7.43", "total": "180.08", "n_correct": "25.165", "ppl": "172.44", "accuracy": "13.974", "wps": "316.9", "ups": "1.76", "wpb": "180.1", "bsz": "10.2", "num_updates": "1400", "lr": "0.0001486", "gnorm": "48.885", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "763"}
+[2026-06-13 11:58:45,559][train_inner][INFO] - {"epoch": 1, "update": 0.504, "loss": "147.929", "nll_loss": "7.379", "total": "179.95", "n_correct": "25.105", "ppl": "166.43", "accuracy": "13.951", "wps": "329.1", "ups": "1.83", "wpb": "179.9", "bsz": "9.5", "num_updates": "1600", "lr": "0.0001684", "gnorm": "50.063", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "873"}
+[2026-06-13 12:00:39,267][train_inner][INFO] - {"epoch": 1, "update": 0.567, "loss": "131.134", "nll_loss": "7.155", "total": "181.98", "n_correct": "28.58", "ppl": "142.52", "accuracy": "15.705", "wps": "320.1", "ups": "1.76", "wpb": "182", "bsz": "10.5", "num_updates": "1800", "lr": "0.0001882", "gnorm": "46.93", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "986"}
+[2026-06-13 12:02:28,174][train_inner][INFO] - {"epoch": 1, "update": 0.63, "loss": "140.158", "nll_loss": "7.1", "total": "182.14", "n_correct": "28.865", "ppl": "137.23", "accuracy": "15.848", "wps": "334.5", "ups": "1.84", "wpb": "182.1", "bsz": "9.8", "num_updates": "2000", "lr": "0.000208", "gnorm": "48.445", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "1095"}
+[2026-06-13 12:04:13,589][train_inner][INFO] - {"epoch": 1, "update": 0.693, "loss": "141.257", "nll_loss": "7.007", "total": "178.665", "n_correct": "28.67", "ppl": "128.59", "accuracy": "16.047", "wps": "339", "ups": "1.9", "wpb": "178.7", "bsz": "9.4", "num_updates": "2200", "lr": "0.0002278", "gnorm": "48.971", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "1201"}
+[2026-06-13 12:05:56,629][train_inner][INFO] - {"epoch": 1, "update": 0.756, "loss": "141.331", "nll_loss": "6.873", "total": "180.825", "n_correct": "31.13", "ppl": "117.21", "accuracy": "17.216", "wps": "351", "ups": "1.94", "wpb": "180.8", "bsz": "9.4", "num_updates": "2400", "lr": "0.0002476", "gnorm": "49.964", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "1304"}
+[2026-06-13 12:07:40,890][train_inner][INFO] - {"epoch": 1, "update": 0.819, "loss": "135.433", "nll_loss": "6.727", "total": "181.03", "n_correct": "32.575", "ppl": "105.93", "accuracy": "17.994", "wps": "347.3", "ups": "1.92", "wpb": "181", "bsz": "9.7", "num_updates": "2600", "lr": "0.0002674", "gnorm": "49.499", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "1408"}
+[2026-06-13 12:09:23,104][train_inner][INFO] - {"epoch": 1, "update": 0.882, "loss": "129.679", "nll_loss": "6.508", "total": "175.29", "n_correct": "34.17", "ppl": "90.99", "accuracy": "19.493", "wps": "343", "ups": "1.96", "wpb": "175.3", "bsz": "9.5", "num_updates": "2800", "lr": "0.0002872", "gnorm": "48.579", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "1510"}
+[2026-06-13 12:11:11,380][train_inner][INFO] - {"epoch": 1, "update": 0.945, "loss": "131.576", "nll_loss": "6.46", "total": "183.02", "n_correct": "35.82", "ppl": "88.01", "accuracy": "19.572", "wps": "338.1", "ups": "1.85", "wpb": "183", "bsz": "9.7", "num_updates": "3000", "lr": "0.000307", "gnorm": "49.527", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "1618"}
+[2026-06-13 12:12:51,531][main][INFO] - end of epoch 1 (average epoch stats below)
+[2026-06-13 12:12:51,546][train][INFO] - {"epoch": 1, "train_loss": "143.345", "train_nll_loss": "7.311", "train_total": "179.799", "train_n_correct": "25.1984", "train_ppl": "158.81", "train_accuracy": "14.015", "train_wps": "332.7", "train_ups": "1.85", "train_wpb": "179.8", "train_bsz": "9.7", "train_num_updates": "3176", "train_lr": "0.000324424", "train_gnorm": "53.75", "train_loss_scale": "128", "train_train_wall": "225", "train_gb_free": "75.7", "train_wall": "1718"}
+[2026-06-13 12:12:52,099][trainer][INFO] - begin training epoch 2
+[2026-06-13 12:12:52,100][main][INFO] - Start iterating over samples
+[2026-06-13 12:13:04,263][train_inner][INFO] - {"epoch": 2, "update": 1.008, "loss": "123.878", "nll_loss": "6.288", "total": "181.945", "n_correct": "37.785", "ppl": "78.14", "accuracy": "20.767", "wps": "322.4", "ups": "1.77", "wpb": "181.9", "bsz": "10.1", "num_updates": "3200", "lr": "0.0003268", "gnorm": "49.037", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "1731"}
+[2026-06-13 12:14:53,525][train_inner][INFO] - {"epoch": 2, "update": 1.071, "loss": "125.247", "nll_loss": "6.174", "total": "181.22", "n_correct": "37.83", "ppl": "72.2", "accuracy": "20.875", "wps": "331.8", "ups": "1.83", "wpb": "181.2", "bsz": "9.8", "num_updates": "3400", "lr": "0.0003466", "gnorm": "50.127", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "1840"}
+[2026-06-13 12:16:46,173][train_inner][INFO] - {"epoch": 2, "update": 1.134, "loss": "117.584", "nll_loss": "5.906", "total": "184.03", "n_correct": "42.82", "ppl": "59.96", "accuracy": "23.268", "wps": "326.8", "ups": "1.78", "wpb": "184", "bsz": "10.2", "num_updates": "3600", "lr": "0.0003664", "gnorm": "51.141", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "1953"}
+[2026-06-13 12:18:29,779][train_inner][INFO] - {"epoch": 2, "update": 1.196, "loss": "124.902", "nll_loss": "5.769", "total": "177.94", "n_correct": "43", "ppl": "54.55", "accuracy": "24.165", "wps": "343.5", "ups": "1.93", "wpb": "177.9", "bsz": "9.1", "num_updates": "3800", "lr": "0.0003862", "gnorm": "53.727", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "2057"}
+[2026-06-13 12:20:12,867][train_inner][INFO] - {"epoch": 2, "update": 1.259, "loss": "117.393", "nll_loss": "5.55", "total": "176.96", "n_correct": "45.53", "ppl": "46.86", "accuracy": "25.729", "wps": "343.4", "ups": "1.94", "wpb": "177", "bsz": "9.4", "num_updates": "4000", "lr": "0.000406", "gnorm": "55.673", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "2160"}
+[2026-06-13 12:21:58,499][train_inner][INFO] - {"epoch": 2, "update": 1.322, "loss": "117.805", "nll_loss": "5.374", "total": "182.315", "n_correct": "49.09", "ppl": "41.47", "accuracy": "26.926", "wps": "345.2", "ups": "1.89", "wpb": "182.3", "bsz": "9.4", "num_updates": "4200", "lr": "0.0004258", "gnorm": "56.485", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "2265"}
+[2026-06-13 12:23:46,126][train_inner][INFO] - {"epoch": 2, "update": 1.385, "loss": "102.729", "nll_loss": "5.103", "total": "178.705", "n_correct": "52.625", "ppl": "34.36", "accuracy": "29.448", "wps": "332.1", "ups": "1.86", "wpb": "178.7", "bsz": "10.2", "num_updates": "4400", "lr": "0.0004456", "gnorm": "53.714", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "2373"}
+[2026-06-13 12:25:36,695][train_inner][INFO] - {"epoch": 2, "update": 1.448, "loss": "97.531", "nll_loss": "4.929", "total": "182.91", "n_correct": "57.835", "ppl": "30.46", "accuracy": "31.619", "wps": "330.9", "ups": "1.81", "wpb": "182.9", "bsz": "10.7", "num_updates": "4600", "lr": "0.0004654", "gnorm": "51.255", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "2484"}
+[2026-06-13 12:27:23,171][train_inner][INFO] - {"epoch": 2, "update": 1.511, "loss": "103.509", "nll_loss": "4.86", "total": "178.54", "n_correct": "57.285", "ppl": "29.03", "accuracy": "32.085", "wps": "335.4", "ups": "1.88", "wpb": "178.5", "bsz": "9.7", "num_updates": "4800", "lr": "0.0004852", "gnorm": "52.367", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "2590"}
+[2026-06-13 12:29:14,700][train_inner][INFO] - {"epoch": 2, "update": 1.574, "loss": "99.21", "nll_loss": "4.695", "total": "181.955", "n_correct": "61.7", "ppl": "25.91", "accuracy": "33.909", "wps": "326.3", "ups": "1.79", "wpb": "182", "bsz": "10.1", "num_updates": "5000", "lr": "0.000505", "gnorm": "50.927", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "2702"}
+[2026-06-13 12:31:02,424][train_inner][INFO] - {"epoch": 2, "update": 1.637, "loss": "95.183", "nll_loss": "4.574", "total": "178.205", "n_correct": "62.3", "ppl": "23.82", "accuracy": "34.96", "wps": "330.9", "ups": "1.86", "wpb": "178.2", "bsz": "10.1", "num_updates": "5200", "lr": "0.0005248", "gnorm": "49.877", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "2809"}
+[2026-06-13 12:32:42,657][train_inner][INFO] - {"epoch": 2, "update": 1.7, "loss": "92.253", "nll_loss": "4.443", "total": "177.005", "n_correct": "65.76", "ppl": "21.75", "accuracy": "37.151", "wps": "353.2", "ups": "2", "wpb": "177", "bsz": "10.1", "num_updates": "5400", "lr": "0.0005446", "gnorm": "49.506", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "2910"}
+[2026-06-13 12:34:07,960][train_inner][INFO] - {"epoch": 2, "update": 1.763, "loss": "109.196", "nll_loss": "4.454", "total": "181.805", "n_correct": "66.035", "ppl": "21.91", "accuracy": "36.322", "wps": "426.3", "ups": "2.34", "wpb": "181.8", "bsz": "8.8", "num_updates": "5600", "lr": "0.0005644", "gnorm": "54.349", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "2995"}
+[2026-06-13 12:35:37,004][train_inner][INFO] - {"epoch": 2, "update": 1.826, "loss": "102.701", "nll_loss": "4.253", "total": "179.055", "n_correct": "69.42", "ppl": "19.07", "accuracy": "38.77", "wps": "402.2", "ups": "2.25", "wpb": "179.1", "bsz": "8.9", "num_updates": "5800", "lr": "0.0005842", "gnorm": "50.305", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "3084"}
+[2026-06-13 12:37:07,246][train_inner][INFO] - {"epoch": 2, "update": 1.889, "loss": "100.305", "nll_loss": "4.23", "total": "178.135", "n_correct": "69.27", "ppl": "18.77", "accuracy": "38.886", "wps": "394.8", "ups": "2.22", "wpb": "178.1", "bsz": "9.1", "num_updates": "6000", "lr": "0.000604", "gnorm": "50.31", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "3174"}
+[2026-06-13 12:38:41,902][train_inner][INFO] - {"epoch": 2, "update": 1.952, "loss": "91.252", "nll_loss": "4.071", "total": "180.595", "n_correct": "74.34", "ppl": "16.8", "accuracy": "41.164", "wps": "381.6", "ups": "2.11", "wpb": "180.6", "bsz": "9.8", "num_updates": "6200", "lr": "0.0006238", "gnorm": "46.582", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "3269"}
+[2026-06-13 12:39:51,657][main][INFO] - begin validation on "valid" subset
+[2026-06-13 12:40:50,907][valid][INFO] - {"epoch": 2, "valid_loss": "82.242", "valid_nll_loss": "3.31", "valid_total": "178.205", "valid_n_correct": "88.1496", "valid_ppl": "9.92", "valid_accuracy": "49.465", "valid_wps": "385.1", "valid_wpb": "178.2", "valid_bsz": "9.4", "valid_num_updates": "6352"}
+[2026-06-13 12:40:50,908][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 6352 updates
+[2026-06-13 12:40:50,908][trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2026-06-13 12:40:55,689][trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2026-06-13 12:41:00,935][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 6352 updates, score 49.465) (writing took 10.026929056970403 seconds)
+[2026-06-13 12:41:00,935][main][INFO] - end of epoch 2 (average epoch stats below)
+[2026-06-13 12:41:00,949][train][INFO] - {"epoch": 2, "train_loss": "105.653", "train_nll_loss": "4.923", "train_total": "179.799", "train_n_correct": "57.727", "train_ppl": "30.33", "train_accuracy": "32.106", "train_wps": "338", "train_ups": "1.88", "train_wpb": "179.8", "train_bsz": "9.7", "train_num_updates": "6352", "train_lr": "0.000638848", "train_gnorm": "51.443", "train_loss_scale": "128", "train_train_wall": "212", "train_gb_free": "75.7", "train_wall": "3408"}
+[2026-06-13 12:41:01,530][trainer][INFO] - begin training epoch 3
+[2026-06-13 12:41:01,531][main][INFO] - Start iterating over samples
+[2026-06-13 12:41:25,271][train_inner][INFO] - {"epoch": 3, "update": 2.015, "loss": "89.25", "nll_loss": "3.92", "total": "177.825", "n_correct": "76.79", "ppl": "15.14", "accuracy": "43.183", "wps": "217.7", "ups": "1.22", "wpb": "177.8", "bsz": "9.6", "num_updates": "6400", "lr": "0.0006436", "gnorm": "45.746", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "3432"}
+[2026-06-13 12:43:05,683][train_inner][INFO] - {"epoch": 3, "update": 2.078, "loss": "87.251", "nll_loss": "3.862", "total": "183.205", "n_correct": "79.815", "ppl": "14.54", "accuracy": "43.566", "wps": "365", "ups": "1.99", "wpb": "183.2", "bsz": "10.1", "num_updates": "6600", "lr": "0.0006634", "gnorm": "44.378", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "3533"}
+[2026-06-13 12:45:07,471][train_inner][INFO] - {"epoch": 3, "update": 2.141, "loss": "85.074", "nll_loss": "3.73", "total": "177.205", "n_correct": "79.635", "ppl": "13.27", "accuracy": "44.939", "wps": "291", "ups": "1.64", "wpb": "177.2", "bsz": "9.8", "num_updates": "6800", "lr": "0.0006832", "gnorm": "42.06", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "3654"}
+[2026-06-13 12:47:21,884][train_inner][INFO] - {"epoch": 3, "update": 2.204, "loss": "84.147", "nll_loss": "3.705", "total": "178.395", "n_correct": "80.935", "ppl": "13.05", "accuracy": "45.368", "wps": "265.5", "ups": "1.49", "wpb": "178.4", "bsz": "9.9", "num_updates": "7000", "lr": "0.000703", "gnorm": "42.384", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "3789"}
+[2026-06-13 12:48:59,645][train_inner][INFO] - {"epoch": 3, "update": 2.267, "loss": "89.07", "nll_loss": "3.688", "total": "185.385", "n_correct": "85.145", "ppl": "12.89", "accuracy": "45.929", "wps": "379.3", "ups": "2.05", "wpb": "185.4", "bsz": "9.7", "num_updates": "7200", "lr": "0.0007228", "gnorm": "43.892", "loss_scale": "128", "train_wall": "14", "gb_free": "75.7", "wall": "3887"}
+[2026-06-13 12:50:29,000][train_inner][INFO] - {"epoch": 3, "update": 2.33, "loss": "87.467", "nll_loss": "3.537", "total": "178.965", "n_correct": "85.995", "ppl": "11.61", "accuracy": "48.051", "wps": "400.6", "ups": "2.24", "wpb": "179", "bsz": "9.2", "num_updates": "7400", "lr": "0.0007426", "gnorm": "40.99", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "3976"}
+[2026-06-13 12:52:02,877][train_inner][INFO] - {"epoch": 3, "update": 2.393, "loss": "84.416", "nll_loss": "3.585", "total": "183.475", "n_correct": "87.735", "ppl": "12", "accuracy": "47.819", "wps": "391", "ups": "2.13", "wpb": "183.5", "bsz": "9.9", "num_updates": "7600", "lr": "0.0007624", "gnorm": "40.662", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4070"}
+[2026-06-13 12:53:35,416][train_inner][INFO] - {"epoch": 3, "update": 2.456, "loss": "86.809", "nll_loss": "3.468", "total": "179.125", "n_correct": "88.255", "ppl": "11.07", "accuracy": "49.27", "wps": "387.2", "ups": "2.16", "wpb": "179.1", "bsz": "9.2", "num_updates": "7800", "lr": "0.0007822", "gnorm": "39.962", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4162"}
+[2026-06-13 12:55:08,065][train_inner][INFO] - {"epoch": 3, "update": 2.519, "loss": "79.585", "nll_loss": "3.355", "total": "182.37", "n_correct": "93.145", "ppl": "10.23", "accuracy": "51.075", "wps": "393.7", "ups": "2.16", "wpb": "182.4", "bsz": "10", "num_updates": "8000", "lr": "0.000802", "gnorm": "37.992", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4255"}
+[2026-06-13 12:56:39,236][train_inner][INFO] - {"epoch": 3, "update": 2.582, "loss": "80.264", "nll_loss": "3.325", "total": "179.46", "n_correct": "92.4", "ppl": "10.02", "accuracy": "51.488", "wps": "393.7", "ups": "2.19", "wpb": "179.5", "bsz": "9.7", "num_updates": "8200", "lr": "0.0008218", "gnorm": "36.81", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4346"}
+[2026-06-13 12:58:12,768][train_inner][INFO] - {"epoch": 3, "update": 2.645, "loss": "79.709", "nll_loss": "3.305", "total": "178.09", "n_correct": "91.72", "ppl": "9.88", "accuracy": "51.502", "wps": "380.9", "ups": "2.14", "wpb": "178.1", "bsz": "9.6", "num_updates": "8400", "lr": "0.0008416", "gnorm": "35.916", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4440"}
+[2026-06-13 12:59:45,674][train_inner][INFO] - {"epoch": 3, "update": 2.708, "loss": "82.331", "nll_loss": "3.19", "total": "177.395", "n_correct": "94.15", "ppl": "9.13", "accuracy": "53.074", "wps": "382", "ups": "2.15", "wpb": "177.4", "bsz": "9.1", "num_updates": "8600", "lr": "0.0008614", "gnorm": "35.419", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4533"}
+[2026-06-13 13:01:18,762][train_inner][INFO] - {"epoch": 3, "update": 2.771, "loss": "77.989", "nll_loss": "3.218", "total": "181.54", "n_correct": "96.395", "ppl": "9.31", "accuracy": "53.098", "wps": "390.1", "ups": "2.15", "wpb": "181.5", "bsz": "9.9", "num_updates": "8800", "lr": "0.0008812", "gnorm": "35.351", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4626"}
+[2026-06-13 13:02:48,159][train_inner][INFO] - {"epoch": 3, "update": 2.834, "loss": "72.523", "nll_loss": "3.083", "total": "175.895", "n_correct": "96.21", "ppl": "8.47", "accuracy": "54.697", "wps": "393.6", "ups": "2.24", "wpb": "175.9", "bsz": "10", "num_updates": "9000", "lr": "0.000901", "gnorm": "33.271", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4715"}
+[2026-06-13 13:04:19,966][train_inner][INFO] - {"epoch": 3, "update": 2.897, "loss": "74.808", "nll_loss": "3.024", "total": "178.905", "n_correct": "100.205", "ppl": "8.14", "accuracy": "56.01", "wps": "389.8", "ups": "2.18", "wpb": "178.9", "bsz": "9.7", "num_updates": "9200", "lr": "0.0009208", "gnorm": "32.256", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4807"}
+[2026-06-13 13:05:48,876][train_inner][INFO] - {"epoch": 3, "update": 2.96, "loss": "75.03", "nll_loss": "3.022", "total": "179", "n_correct": "99.905", "ppl": "8.12", "accuracy": "55.813", "wps": "402.7", "ups": "2.25", "wpb": "179", "bsz": "9.7", "num_updates": "9400", "lr": "0.0009406", "gnorm": "33.467", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4896"}
+[2026-06-13 13:06:48,350][main][INFO] - end of epoch 3 (average epoch stats below)
+[2026-06-13 13:06:48,360][train][INFO] - {"epoch": 3, "train_loss": "81.45", "train_nll_loss": "3.395", "train_total": "179.799", "train_n_correct": "90.4185", "train_ppl": "10.52", "train_accuracy": "50.289", "train_wps": "369", "train_ups": "2.05", "train_wpb": "179.8", "train_bsz": "9.7", "train_num_updates": "9528", "train_lr": "0.000953272", "train_gnorm": "38.221", "train_loss_scale": "128", "train_train_wall": "209", "train_gb_free": "75.7", "train_wall": "4955"}
+[2026-06-13 13:06:48,886][trainer][INFO] - begin training epoch 4
+[2026-06-13 13:06:48,887][main][INFO] - Start iterating over samples
+[2026-06-13 13:07:24,206][train_inner][INFO] - {"epoch": 4, "update": 3.023, "loss": "68.925", "nll_loss": "2.889", "total": "176.035", "n_correct": "101.54", "ppl": "7.41", "accuracy": "57.682", "wps": "369.4", "ups": "2.1", "wpb": "176", "bsz": "10.1", "num_updates": "9600", "lr": "0.0009604", "gnorm": "31.589", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "4991"}
+[2026-06-13 13:08:54,760][train_inner][INFO] - {"epoch": 4, "update": 3.086, "loss": "67.982", "nll_loss": "2.857", "total": "178.395", "n_correct": "103.895", "ppl": "7.25", "accuracy": "58.239", "wps": "394.1", "ups": "2.21", "wpb": "178.4", "bsz": "10.3", "num_updates": "9800", "lr": "0.0009802", "gnorm": "29.968", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5082"}
+[2026-06-13 13:10:21,533][train_inner][INFO] - {"epoch": 4, "update": 3.149, "loss": "76.024", "nll_loss": "2.817", "total": "177.085", "n_correct": "103.535", "ppl": "7.05", "accuracy": "58.466", "wps": "408.2", "ups": "2.31", "wpb": "177.1", "bsz": "9.1", "num_updates": "10000", "lr": "0.001", "gnorm": "32.613", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "5168"}
+[2026-06-13 13:11:52,849][train_inner][INFO] - {"epoch": 4, "update": 3.212, "loss": "66.922", "nll_loss": "2.705", "total": "176.615", "n_correct": "106.485", "ppl": "6.52", "accuracy": "60.292", "wps": "386.9", "ups": "2.19", "wpb": "176.6", "bsz": "10", "num_updates": "10200", "lr": "0.000970487", "gnorm": "29.305", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5260"}
+[2026-06-13 13:13:29,619][train_inner][INFO] - {"epoch": 4, "update": 3.275, "loss": "72.314", "nll_loss": "2.784", "total": "179.855", "n_correct": "106.87", "ppl": "6.89", "accuracy": "59.42", "wps": "371.8", "ups": "2.07", "wpb": "179.9", "bsz": "9.6", "num_updates": "10400", "lr": "0.000941845", "gnorm": "29.531", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5357"}
+[2026-06-13 13:14:58,494][train_inner][INFO] - {"epoch": 4, "update": 3.338, "loss": "73.353", "nll_loss": "2.609", "total": "179.76", "n_correct": "110.88", "ppl": "6.1", "accuracy": "61.682", "wps": "404.6", "ups": "2.25", "wpb": "179.8", "bsz": "9.1", "num_updates": "10600", "lr": "0.000914048", "gnorm": "29.826", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5445"}
+[2026-06-13 13:16:31,589][train_inner][INFO] - {"epoch": 4, "update": 3.401, "loss": "66.761", "nll_loss": "2.528", "total": "177.71", "n_correct": "111.505", "ppl": "5.77", "accuracy": "62.745", "wps": "381.8", "ups": "2.15", "wpb": "177.7", "bsz": "9.7", "num_updates": "10800", "lr": "0.000887072", "gnorm": "28.102", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5539"}
+[2026-06-13 13:18:09,268][train_inner][INFO] - {"epoch": 4, "update": 3.463, "loss": "69.44", "nll_loss": "2.578", "total": "182.28", "n_correct": "113.575", "ppl": "5.97", "accuracy": "62.308", "wps": "373.3", "ups": "2.05", "wpb": "182.3", "bsz": "9.7", "num_updates": "11000", "lr": "0.000860892", "gnorm": "28.68", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5636"}
+[2026-06-13 13:19:41,941][train_inner][INFO] - {"epoch": 4, "update": 3.526, "loss": "70.965", "nll_loss": "2.477", "total": "181.47", "n_correct": "115.47", "ppl": "5.57", "accuracy": "63.63", "wps": "391.7", "ups": "2.16", "wpb": "181.5", "bsz": "9.2", "num_updates": "11200", "lr": "0.000835484", "gnorm": "28.711", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5729"}
+[2026-06-13 13:21:14,924][train_inner][INFO] - {"epoch": 4, "update": 3.589, "loss": "65.399", "nll_loss": "2.399", "total": "181.29", "n_correct": "117.26", "ppl": "5.27", "accuracy": "64.681", "wps": "390", "ups": "2.15", "wpb": "181.3", "bsz": "9.8", "num_updates": "11400", "lr": "0.000810826", "gnorm": "27.126", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5822"}
+[2026-06-13 13:22:50,208][train_inner][INFO] - {"epoch": 4, "update": 3.652, "loss": "67.213", "nll_loss": "2.347", "total": "180.505", "n_correct": "118.155", "ppl": "5.09", "accuracy": "65.458", "wps": "378.9", "ups": "2.1", "wpb": "180.5", "bsz": "9.3", "num_updates": "11600", "lr": "0.000786896", "gnorm": "28.522", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "5917"}
+[2026-06-13 13:24:24,259][train_inner][INFO] - {"epoch": 4, "update": 3.715, "loss": "66.146", "nll_loss": "2.284", "total": "179.3", "n_correct": "119.17", "ppl": "4.87", "accuracy": "66.464", "wps": "381.3", "ups": "2.13", "wpb": "179.3", "bsz": "9.3", "num_updates": "11800", "lr": "0.000763673", "gnorm": "25.947", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6011"}
+[2026-06-13 13:26:08,974][train_inner][INFO] - {"epoch": 4, "update": 3.778, "loss": "66.888", "nll_loss": "2.315", "total": "183.885", "n_correct": "121.495", "ppl": "4.98", "accuracy": "66.071", "wps": "351.4", "ups": "1.91", "wpb": "183.9", "bsz": "9.5", "num_updates": "12000", "lr": "0.000741134", "gnorm": "28.335", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6116"}
+[2026-06-13 13:27:48,388][train_inner][INFO] - {"epoch": 4, "update": 3.841, "loss": "54.105", "nll_loss": "2.126", "total": "181.22", "n_correct": "125.115", "ppl": "4.37", "accuracy": "69.04", "wps": "364.6", "ups": "2.01", "wpb": "181.2", "bsz": "11", "num_updates": "12200", "lr": "0.000719261", "gnorm": "22.862", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6215"}
+[2026-06-13 13:29:35,516][train_inner][INFO] - {"epoch": 4, "update": 3.904, "loss": "60.801", "nll_loss": "2.19", "total": "181.525", "n_correct": "123.51", "ppl": "4.56", "accuracy": "68.04", "wps": "338.9", "ups": "1.87", "wpb": "181.5", "bsz": "10", "num_updates": "12400", "lr": "0.000698034", "gnorm": "25.06", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6322"}
+[2026-06-13 13:31:53,076][train_inner][INFO] - {"epoch": 4, "update": 3.967, "loss": "63.344", "nll_loss": "2.128", "total": "180.67", "n_correct": "124.42", "ppl": "4.37", "accuracy": "68.866", "wps": "262.7", "ups": "1.45", "wpb": "180.7", "bsz": "9.4", "num_updates": "12600", "lr": "0.000677433", "gnorm": "26.073", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "6460"}
+[2026-06-13 13:33:15,284][main][INFO] - begin validation on "valid" subset
+[2026-06-13 13:34:45,086][valid][INFO] - {"epoch": 4, "valid_loss": "48.875", "valid_nll_loss": "1.236", "valid_total": "178.205", "valid_n_correct": "142.795", "valid_ppl": "2.36", "valid_accuracy": "80.13", "valid_wps": "253.1", "valid_wpb": "178.2", "valid_bsz": "9.4", "valid_num_updates": "12704", "valid_best_accuracy": "80.13"}
+[2026-06-13 13:34:45,088][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 12704 updates
+[2026-06-13 13:34:45,088][trainer][INFO] - Saving checkpoint to checkpoints/checkpoint_best.pt
+[2026-06-13 13:34:49,871][trainer][INFO] - Finished saving checkpoint to checkpoints/checkpoint_best.pt
+[2026-06-13 13:34:56,317][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 4 @ 12704 updates, score 80.13) (writing took 11.229135224944912 seconds)
+[2026-06-13 13:34:56,318][main][INFO] - end of epoch 4 (average epoch stats below)
+[2026-06-13 13:34:56,331][train][INFO] - {"epoch": 4, "train_loss": "66.55", "train_nll_loss": "2.469", "train_total": "179.799", "train_n_correct": "114.75", "train_ppl": "5.54", "train_accuracy": "63.821", "train_wps": "338.3", "train_ups": "1.88", "train_wpb": "179.8", "train_bsz": "9.7", "train_num_updates": "12704", "train_lr": "0.000666961", "train_gnorm": "27.939", "train_loss_scale": "128", "train_train_wall": "205", "train_gb_free": "75.7", "train_wall": "6643"}
+[2026-06-13 13:34:57,100][trainer][INFO] - begin training epoch 5
+[2026-06-13 13:34:57,100][main][INFO] - Start iterating over samples
+[2026-06-13 13:36:04,597][train_inner][INFO] - {"epoch": 5, "update": 4.03, "loss": "57.968", "nll_loss": "2.061", "total": "176.29", "n_correct": "123.565", "ppl": "4.17", "accuracy": "70.092", "wps": "140.2", "ups": "0.8", "wpb": "176.3", "bsz": "9.8", "num_updates": "12800", "lr": "0.00065744", "gnorm": "23.332", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6712"}
+[2026-06-13 13:37:48,710][train_inner][INFO] - {"epoch": 5, "update": 4.093, "loss": "60.614", "nll_loss": "1.949", "total": "178.905", "n_correct": "127.71", "ppl": "3.86", "accuracy": "71.384", "wps": "343.7", "ups": "1.92", "wpb": "178.9", "bsz": "9.2", "num_updates": "13000", "lr": "0.000638036", "gnorm": "25.067", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "6816"}
+[2026-06-13 13:40:37,812][train_inner][INFO] - {"epoch": 5, "update": 4.156, "loss": "57.895", "nll_loss": "1.877", "total": "181.26", "n_correct": "131.44", "ppl": "3.67", "accuracy": "72.515", "wps": "214.4", "ups": "1.18", "wpb": "181.3", "bsz": "9.6", "num_updates": "13200", "lr": "0.000619206", "gnorm": "23.589", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "6985"}
+[2026-06-13 13:43:26,558][train_inner][INFO] - {"epoch": 5, "update": 4.219, "loss": "59.57", "nll_loss": "1.946", "total": "180.4", "n_correct": "129.37", "ppl": "3.85", "accuracy": "71.713", "wps": "213.8", "ups": "1.19", "wpb": "180.4", "bsz": "9.5", "num_updates": "13400", "lr": "0.000600931", "gnorm": "24.003", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "7153"}
+[2026-06-13 13:45:45,139][train_inner][INFO] - {"epoch": 5, "update": 4.282, "loss": "54.954", "nll_loss": "1.88", "total": "181.74", "n_correct": "131.625", "ppl": "3.68", "accuracy": "72.425", "wps": "262.3", "ups": "1.44", "wpb": "181.7", "bsz": "10.2", "num_updates": "13600", "lr": "0.000583196", "gnorm": "23.637", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "7292"}
+[2026-06-13 13:48:14,749][train_inner][INFO] - {"epoch": 5, "update": 4.345, "loss": "55.306", "nll_loss": "1.904", "total": "182.53", "n_correct": "132.145", "ppl": "3.74", "accuracy": "72.396", "wps": "244", "ups": "1.34", "wpb": "182.5", "bsz": "10.2", "num_updates": "13800", "lr": "0.000565984", "gnorm": "24.044", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "7442"}
+[2026-06-13 13:50:37,139][train_inner][INFO] - {"epoch": 5, "update": 4.408, "loss": "57.273", "nll_loss": "1.785", "total": "185.455", "n_correct": "137.615", "ppl": "3.45", "accuracy": "74.204", "wps": "260.5", "ups": "1.4", "wpb": "185.5", "bsz": "9.7", "num_updates": "14000", "lr": "0.00054928", "gnorm": "23.174", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "7584"}
+[2026-06-13 13:53:38,435][train_inner][INFO] - {"epoch": 5, "update": 4.471, "loss": "58.979", "nll_loss": "1.834", "total": "176.07", "n_correct": "129.375", "ppl": "3.57", "accuracy": "73.479", "wps": "194.2", "ups": "1.1", "wpb": "176.1", "bsz": "9", "num_updates": "14200", "lr": "0.000533069", "gnorm": "24.381", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "7765"}
+[2026-06-13 13:56:07,935][train_inner][INFO] - {"epoch": 5, "update": 4.534, "loss": "50.906", "nll_loss": "1.859", "total": "177.155", "n_correct": "129.915", "ppl": "3.63", "accuracy": "73.334", "wps": "237", "ups": "1.34", "wpb": "177.2", "bsz": "10.6", "num_updates": "14400", "lr": "0.000517337", "gnorm": "21.23", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "7915"}
+[2026-06-13 13:58:36,196][train_inner][INFO] - {"epoch": 5, "update": 4.597, "loss": "53.496", "nll_loss": "1.815", "total": "182.485", "n_correct": "134.43", "ppl": "3.52", "accuracy": "73.666", "wps": "246.2", "ups": "1.35", "wpb": "182.5", "bsz": "10.3", "num_updates": "14600", "lr": "0.000502069", "gnorm": "22.591", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "8063"}
+[2026-06-13 14:01:05,614][train_inner][INFO] - {"epoch": 5, "update": 4.66, "loss": "56.054", "nll_loss": "1.808", "total": "179.22", "n_correct": "131.905", "ppl": "3.5", "accuracy": "73.599", "wps": "239.9", "ups": "1.34", "wpb": "179.2", "bsz": "9.6", "num_updates": "14800", "lr": "0.000487251", "gnorm": "23.435", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "8213"}
+[2026-06-13 14:03:35,012][train_inner][INFO] - {"epoch": 5, "update": 4.723, "loss": "52.856", "nll_loss": "1.728", "total": "179.57", "n_correct": "134.25", "ppl": "3.31", "accuracy": "74.762", "wps": "240.4", "ups": "1.34", "wpb": "179.6", "bsz": "10", "num_updates": "15000", "lr": "0.000472871", "gnorm": "22.199", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "8362"}
+[2026-06-13 14:05:58,850][train_inner][INFO] - {"epoch": 5, "update": 4.786, "loss": "55.716", "nll_loss": "1.725", "total": "177.655", "n_correct": "133.565", "ppl": "3.31", "accuracy": "75.182", "wps": "247", "ups": "1.39", "wpb": "177.7", "bsz": "9.3", "num_updates": "15200", "lr": "0.000458915", "gnorm": "23.672", "loss_scale": "128", "train_wall": "13", "gb_free": "75.7", "wall": "8506"}
+[2026-06-13 14:08:03,303][train_inner][INFO] - {"epoch": 5, "update": 4.849, "loss": "55.988", "nll_loss": "1.761", "total": "179.6", "n_correct": "133.655", "ppl": "3.39", "accuracy": "74.418", "wps": "288.7", "ups": "1.61", "wpb": "179.6", "bsz": "9.5", "num_updates": "15400", "lr": "0.000445371", "gnorm": "23.284", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "8630"}
+[2026-06-13 14:10:18,116][train_inner][INFO] - {"epoch": 5, "update": 4.912, "loss": "58.688", "nll_loss": "1.719", "total": "178.735", "n_correct": "134.525", "ppl": "3.29", "accuracy": "75.265", "wps": "265.2", "ups": "1.48", "wpb": "178.7", "bsz": "8.9", "num_updates": "15600", "lr": "0.000432227", "gnorm": "23.539", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "8765"}
+[2026-06-13 14:12:14,937][train_inner][INFO] - {"epoch": 5, "update": 4.975, "loss": "53.049", "nll_loss": "1.764", "total": "179.115", "n_correct": "133.88", "ppl": "3.4", "accuracy": "74.745", "wps": "306.7", "ups": "1.71", "wpb": "179.1", "bsz": "10", "num_updates": "15800", "lr": "0.00041947", "gnorm": "22.421", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "8882"}
+[2026-06-13 14:13:01,056][main][INFO] - end of epoch 5 (average epoch stats below)
+[2026-06-13 14:13:01,066][train][INFO] - {"epoch": 5, "train_loss": "56.007", "train_nll_loss": "1.825", "train_total": "179.799", "train_n_correct": "132.187", "train_ppl": "3.54", "train_accuracy": "73.52", "train_wps": "249.9", "train_ups": "1.39", "train_wpb": "179.8", "train_bsz": "9.7", "train_num_updates": "15880", "train_lr": "0.000414474", "train_gnorm": "23.307", "train_loss_scale": "128", "train_train_wall": "199", "train_gb_free": "75.7", "train_wall": "8928"}
+[2026-06-13 14:13:01,482][trainer][INFO] - begin training epoch 6
+[2026-06-13 14:13:01,482][main][INFO] - Start iterating over samples
+[2026-06-13 14:14:15,004][train_inner][INFO] - {"epoch": 6, "update": 5.038, "loss": "51.471", "nll_loss": "1.574", "total": "179.67", "n_correct": "138.77", "ppl": "2.98", "accuracy": "77.236", "wps": "299.3", "ups": "1.67", "wpb": "179.7", "bsz": "9.8", "num_updates": "16000", "lr": "0.000407091", "gnorm": "21.283", "loss_scale": "128", "train_wall": "12", "gb_free": "75.7", "wall": "9002"}
+[2026-06-13 14:16:32,316][train_inner][INFO] - {"epoch": 6, "update": 5.101, "loss": "50.865", "nll_loss": "1.573", "total": "181.555", "n_correct": "140.41", "ppl": "2.97", "accuracy": "77.337", "wps": "264.5", "ups": "1.46", "wpb": "181.6", "bsz": "10", "num_updates": "16200", "lr": "0.000395076", "gnorm": "21.744", "loss_scale": "128", "train_wall": "19", "gb_free": "75.7", "wall": "9139"}
