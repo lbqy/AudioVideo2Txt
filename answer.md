@@ -337,6 +337,24 @@ beam search（束搜索）是一种在「贪心」和「全局最优」之间折
 
 ## 第 5 章进阶训练方法实现补充
 
+### 实验进展记录
+
+第 5 章围绕三类训练改进展开：5.1 损失函数改进、5.2 Modality Dropout、5.3 Feature Mask。
+实验流程按「实现开关 → 默认配置复现 → 针对 5.2 扫参 → best checkpoint 推理评测 → 曲线与日志归档」
+推进，最终形成了可复现实验记录。
+
+| 阶段 | 已完成内容 | 结果产物 |
+| ---- | ---- | ---- |
+| 基线复现 | 完成第 4 章 V2T、AV2T baseline 训练与测试集 beam search 推理 | `results/inference/v2t/`、`results/inference/av2t/`、`results/plots/*baseline*` |
+| 5.1 默认实验 | 完成 V2T 与 AV2T 两组默认配置训练，默认参数为 `focal_gamma=1.0, confidence_penalty=0.0` | `default_5_1_enhanced_loss_*` 训练日志、checkpoint、WER 结果 |
+| 5.2 默认与扫参 | 完成 Modality Dropout 默认配置实验，并围绕 dropout 概率、音频遮挡概率、span 长度进行细扫参 | `sweep_5_2_*` 日志、最优配置 `md_p010_a03_span10_30` |
+| 5.2 best 推理 | 对 5.2 最优 checkpoint 做 AV2T 测试集推理 | `results/inference/5_2_md_p010_a03_span10_30_av2t/` |
+| 5.3 默认实验 | 完成 V2T 与 AV2T 两组默认配置训练，默认参数为 `apply_mask=true, mask_prob=0.05, mask_length=10` | `default_5_3_feature_mask_*` 训练日志、checkpoint、WER 结果 |
+| 曲线与汇总 | 重新生成所有完整实验的训练曲线和 CSV/JSON 汇总 | `results/plots/all_experiments/`、`results/metrics/all_experiments_summary.*` |
+
+截至目前，5.1、5.2、5.3 的默认配置结果均已获得；其中 5.2 额外完成了多组超参扫描，并对最优配置
+补充了测试集 WER。所有训练均到达 `max_update=30000` 后正常停止；中途未完成的旧日志未作为最终结果统计。
+
 ### 5.1 损失函数改进
 
 **文件 / 位置**：`losses/label_smoothed_cross_entropy.py` →
@@ -500,10 +518,20 @@ test WER 为 47.822%，均弱于第 4 章 V2T baseline；AV2T 的 valid acc 为 
 | 5.3 Feature Mask | V2T | `mask_prob=0.05, mask_length=10` | 65.186% | 47.822% |
 | 5.3 Feature Mask | AV2T | `mask_prob=0.05, mask_length=10` | 91.265% | 14.951% |
 
-从默认配置看，5.1 在 AV2T 的 test WER 上取得最小值 13.772%，5.2 在 valid acc 上取得最高值
-91.578%（扫参最优），5.3 默认配置在 clean test 上没有超过 baseline，但提供了面向遮挡鲁棒性的
-训练增强实现。所有训练日志和曲线已汇总到 `results/repro_logs/`、`results/plots/all_experiments/`
-和 `results/metrics/all_experiments_summary.csv`。
+从默认配置和扫参结果看，可以得到以下结论：
+
+1. **Baseline 已经较强**：AV2T baseline 的 valid acc 为 91.49%，test WER 为 13.853%，是后续改进的主要参照。
+2. **5.1 在最终 WER 上最好**：AV2T + 5.1 的 test WER 为 **13.772%**，低于 baseline 的 13.853%；
+   但其 valid acc 为 90.946%，低于 baseline，说明该方法的收益主要体现在自回归解码指标上。
+3. **5.2 在 valid acc 上最好**：扫参最优配置 `p=0.10, audio=0.3, span=10~30` 的 valid acc 为
+   **91.578%**，高于 baseline；但 test WER 为 13.883%，与 baseline 基本持平。
+4. **5.3 默认配置未超过 baseline**：AV2T + 5.3 的 valid acc 为 91.265%，仍保持较高水平，但 test WER
+   为 14.951%，说明默认 Feature Mask 在 clean test 上没有带来收益。
+
+因此，如果以测试集 WER 为主要指标，5.1 默认配置是当前最优；如果以验证集 teacher-forcing accuracy 为主要指标，
+5.2 的扫参最优配置最高；5.3 默认配置更多体现为可叠加的鲁棒性增强实现。所有训练日志和曲线已汇总到
+`results/repro_logs/`、`results/plots/all_experiments/` 和
+`results/metrics/all_experiments_summary.csv`。
 
 ### 5.2 + 5.3 叠加
 
