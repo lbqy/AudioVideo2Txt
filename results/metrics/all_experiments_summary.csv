@@ -1,0 +1,24 @@
+tag,group,log_path,done_training,last_update,num_train_points,num_valid_points,final_train_loss,final_train_acc,final_valid_loss,final_valid_acc,best_valid_loss,best_valid_acc,best_valid_update
+train_av2t,4 baseline,results/logs/train_av2t.log,True,30000,150,5,33.209,94.685,37.362,91.494,37.362,91.494,30000
+train_repro_av2t,4 baseline,results/repro_logs/train_repro_av2t.log,False,3400,17,0,118.7,23.551,,,,,
+train_repro_v2t,4 baseline,results/repro_logs/train_repro_v2t.log,True,30000,150,10,59.422,67.514,64.431,66.022,64.431,66.022,30000
+train_v2t,4 baseline,results/logs/train_v2t.log,True,30000,150,10,58.762,68.403,63.938,66.653,63.938,66.653,30000
+default_5_1_enhanced_loss_v2t_20260613,5.1 loss,results/repro_logs/default_5_1_enhanced_loss_v2t_20260613.log,True,30000,150,10,41.935,67.105,47.201,65.58,47.201,65.58,30000
+train_repro_enhanced_loss_av2t,5.1 loss,results/repro_logs/train_repro_enhanced_loss_av2t.log,False,800,4,0,146.37,11.264,,,,,
+train_repro_enhanced_loss_av2t_gpu4,5.1 loss,results/repro_logs/train_repro_enhanced_loss_av2t_gpu4.log,False,600,3,0,154.194,8.231,,,,,
+train_repro_enhanced_loss_v2t,5.1 loss,results/repro_logs/train_repro_enhanced_loss_v2t.log,False,8600,43,2,92.51,38.042,94.455,34.747,94.455,34.747,6352
+default_5_2_modality_dropout_av2t_fixed_20260613,5.2 modality dropout,results/repro_logs/default_5_2_modality_dropout_av2t_fixed_20260613.log,True,30000,150,5,33.464,94.424,37.333,91.406,37.333,91.406,30000
+smoke_modality_dropout_fixed,5.2 modality dropout,results/repro_logs/smoke_modality_dropout_fixed.log,True,1,1,1,259.083,0.0,194.808,0.698,194.808,0.698,1
+train_repro_modality_dropout_av2t_span,5.2 modality dropout,results/repro_logs/train_repro_modality_dropout_av2t_span.log,True,30000,150,5,33.445,94.574,37.345,91.371,37.345,91.371,30000
+sweep_5_2_md_p001_a03_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p001_a03_span10_30_20260613.log,True,30000,150,5,33.186,94.795,37.387,91.503,37.387,91.503,30000
+sweep_5_2_md_p002_a02_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p002_a02_span10_30_20260613.log,True,30000,150,5,33.227,94.678,37.298,91.446,37.298,91.446,30000
+sweep_5_2_md_p002_a03_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p002_a03_span10_30_20260613.log,True,30000,150,5,33.374,94.727,37.177,91.503,37.177,91.503,30000
+sweep_5_2_md_p002_a04_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p002_a04_span10_30_20260613.log,True,30000,150,5,33.308,94.778,37.43,91.322,37.43,91.322,30000
+sweep_5_2_md_p003_a03_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p003_a03_span10_30_20260613.log,True,30000,150,5,33.391,94.572,37.242,91.552,37.242,91.552,30000
+sweep_5_2_md_p005_a03_sample_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p005_a03_sample_20260613.log,True,30000,150,5,34.119,93.863,37.295,91.375,37.295,91.375,30000
+sweep_5_2_md_p005_a03_span20_50_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p005_a03_span20_50_20260613.log,True,30000,150,5,33.604,94.374,37.323,91.415,37.323,91.415,30000
+sweep_5_2_md_p005_a03_span5_15_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p005_a03_span5_15_20260613.log,True,30000,150,5,33.404,94.435,37.483,91.287,37.483,91.287,30000
+sweep_5_2_md_p005_a05_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p005_a05_span10_30_20260613.log,True,30000,150,5,33.455,94.575,37.353,91.556,37.353,91.556,30000
+sweep_5_2_md_p010_a03_span10_30_20260613,5.2 sweep,results/repro_logs/sweep_5_2_md_p010_a03_span10_30_20260613.log,True,30000,150,5,33.494,94.388,37.362,91.578,37.362,91.578,30000
+default_5_3_feature_mask_av2t_20260613,5.3 feature mask,results/repro_logs/default_5_3_feature_mask_av2t_20260613.log,False,16200,81,2,50.865,77.337,48.875,80.13,48.875,80.13,12704
+default_5_3_feature_mask_v2t_20260613,5.3 feature mask,results/repro_logs/default_5_3_feature_mask_v2t_20260613.log,True,30000,150,10,74.112,55.593,65.292,65.186,65.292,65.186,30000
