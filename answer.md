@@ -337,6 +337,49 @@ beam search（束搜索）是一种在「贪心」和「全局最优」之间折
 
 ## 第 5 章进阶训练方法实现补充
 
+### 5.1 损失函数改进
+
+**文件 / 位置**：`losses/label_smoothed_cross_entropy.py` →
+`LabelSmoothedCrossEntropyCriterion.compute_enhanced_loss`。
+
+在原有 label smoothing 交叉熵基础上加入两个可独立开关的损失项：
+
+- `criterion.focal_gamma`：当 `focal_gamma > 0` 时，对每个非 padding token 的损失乘以
+  `(1 - p_t) ** gamma`，其中 `p_t = exp(-nll_loss)`。该项会降低已高置信度预测的权重，使训练更关注
+  难例 token。
+- `criterion.confidence_penalty`：当 `confidence_penalty > 0` 时，加入
+  `sum(p * log p)` 形式的置信度惩罚，抑制输出分布过度尖锐。
+
+默认实验采用 `focal_gamma=1.0, confidence_penalty=0.0`，即只开启 focal loss 调制；当两个参数都为 0
+时会回退到第 4 章的原始标签平滑损失。该实现不改变模型结构，也不影响 5.2、5.3 的开关，因此可以和
+其他训练策略叠加。
+
+V2T 训练入口：`scripts/train_enhanced_loss_v2t.sh`；
+V2T 推理入口：`scripts/test_enhanced_loss_v2t.sh`。
+AV2T 训练入口：`scripts/train_enhanced_loss_av2t.sh`；
+AV2T 推理使用 `scripts/test_av2t.sh` 并指定对应 checkpoint。
+
+**默认配置实验结果**：
+
+| 模态 | train loss | train acc | valid loss | valid acc | test WER |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| V2T + 5.1 | 41.935 | 67.105% | 47.201 | 65.580% | 46.776% |
+| AV2T + 5.1 | 6.987 | 94.335% | 12.562 | 90.946% | **13.772%** |
+
+其中 V2T 结果保存在 `exp/default_5_1_enhanced_loss_v2t_20260613/`，
+AV2T 结果保存在 `exp/default_5_1_enhanced_loss_av2t_20260614/`；推理输出分别位于
+`results/inference/5_1_enhanced_loss_v2t_20260613/` 和
+`results/inference/5_1_enhanced_loss_av2t_20260614/`。
+
+**结果分析**：在纯视频任务上，5.1 的 valid acc 为 65.58%，略低于第 4 章 V2T baseline 的 66.65%，
+test WER 为 46.776%，也略高于 baseline 的 46.286%。这说明对弱模态 V2T 而言，默认
+`gamma=1.0` 会让训练更偏向难例，但没有提升干净测试集的整体解码质量。
+
+在 AV2T 任务上，5.1 的 valid acc 为 90.946%，略低于第 4 章 AV2T baseline 的 91.49%；但 test WER
+为 13.772%，低于 baseline 的 13.853%。这表明该损失在音视频融合任务中虽然没有提高 teacher-forcing
+验证准确率，但对自回归解码的词错误率有轻微正向效果，可能是因为 focal 调制降低了易预测 token 的主导性，
+使模型在部分难例词上更稳。
+
 ### 5.2 Modality Dropout
 
 **文件 / 位置**：`models/encoder_backbone.py` → `EncoderBackbone.apply_modality_dropout`。
@@ -421,6 +464,46 @@ V2T 独立训练入口：`scripts/train_feature_mask_v2t.sh`；
 V2T 独立推理入口：`scripts/test_feature_mask_v2t.sh`。
 AV2T 独立训练入口：`scripts/train_feature_mask_av2t.sh`；
 AV2T 独立推理入口：`scripts/test_feature_mask_av2t.sh`。
+
+**默认配置实验结果**：
+
+默认配置为 `apply_mask=true, mask_prob=0.05, mask_length=10, mask_channel_prob=0.0`，即只在时间维做
+长度为 10 的连续 feature mask。
+
+| 模态 | train loss | train acc | valid loss | valid acc | test WER |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| V2T + 5.3 | 74.112 | 55.593% | 65.292 | 65.186% | 47.822% |
+| AV2T + 5.3 | 40.019 | 87.686% | 37.415 | 91.265% | 14.951% |
+
+其中 V2T 结果保存在 `exp/default_5_3_feature_mask_v2t_20260613/`，
+AV2T 结果保存在 `exp/default_5_3_feature_mask_av2t_20260614/`；推理输出分别位于
+`results/inference/5_3_feature_mask_v2t_20260613/` 和
+`results/inference/5_3_feature_mask_av2t_20260614/`。
+
+**结果分析**：Feature Mask 是一种训练时特征遮挡正则化。默认配置下，V2T 的 valid acc 为 65.186%，
+test WER 为 47.822%，均弱于第 4 章 V2T baseline；AV2T 的 valid acc 为 91.265%，接近 baseline
+91.49%，但 test WER 为 14.951%，高于 baseline 的 13.853%。这说明默认 mask 强度在当前 clean
+测试集上没有带来直接收益，主要原因是干净测试集没有显式遮挡或缺失片段，而时间维 feature mask 会在训练中
+人为丢失一部分连续时序信息，降低了模型对完整输入的拟合程度。与此同时，AV2T 的 valid acc 仍能达到
+91% 以上，说明该实现本身可以稳定训练，适合作为鲁棒性增强开关与其他策略组合。
+
+### 5.1 / 5.2 / 5.3 默认配置对比
+
+| 方法 | 模态 | 默认关键配置 | valid acc | test WER |
+| ---- | ---- | ---- | ---- | ---- |
+| 第 4 章 Baseline | V2T | 无额外增强 | 66.65% | 46.286% |
+| 第 4 章 Baseline | AV2T | 无额外增强 | 91.49% | 13.853% |
+| 5.1 损失函数改进 | V2T | `focal_gamma=1.0` | 65.580% | 46.776% |
+| 5.1 损失函数改进 | AV2T | `focal_gamma=1.0` | 90.946% | **13.772%** |
+| 5.2 Modality Dropout | AV2T | `p=0.05, audio=0.3, span=10~30` | 91.406% | 未单独解码 |
+| 5.2 最优扫参 | AV2T | `p=0.10, audio=0.3, span=10~30` | **91.578%** | 13.883% |
+| 5.3 Feature Mask | V2T | `mask_prob=0.05, mask_length=10` | 65.186% | 47.822% |
+| 5.3 Feature Mask | AV2T | `mask_prob=0.05, mask_length=10` | 91.265% | 14.951% |
+
+从默认配置看，5.1 在 AV2T 的 test WER 上取得最小值 13.772%，5.2 在 valid acc 上取得最高值
+91.578%（扫参最优），5.3 默认配置在 clean test 上没有超过 baseline，但提供了面向遮挡鲁棒性的
+训练增强实现。所有训练日志和曲线已汇总到 `results/repro_logs/`、`results/plots/all_experiments/`
+和 `results/metrics/all_experiments_summary.csv`。
 
 ### 5.2 + 5.3 叠加
 

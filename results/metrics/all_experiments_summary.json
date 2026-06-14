@@ -64,6 +64,22 @@
     "best_valid_update": 30000
   },
   {
+    "tag": "default_5_1_enhanced_loss_av2t_20260614",
+    "group": "5.1 loss",
+    "log_path": "results/repro_logs/default_5_1_enhanced_loss_av2t_20260614.log",
+    "done_training": true,
+    "last_update": 30000,
+    "num_train_points": 150,
+    "num_valid_points": 5,
+    "final_train_loss": 6.987,
+    "final_train_acc": 94.335,
+    "final_valid_loss": 12.562,
+    "final_valid_acc": 90.946,
+    "best_valid_loss": 12.562,
+    "best_valid_acc": 90.946,
+    "best_valid_update": 30000
+  },
+  {
     "tag": "default_5_1_enhanced_loss_v2t_20260613",
     "group": "5.1 loss",
     "log_path": "results/repro_logs/default_5_1_enhanced_loss_v2t_20260613.log",
@@ -350,6 +366,22 @@
     "best_valid_loss": 48.875,
     "best_valid_acc": 80.13,
     "best_valid_update": 12704
+  },
+  {
+    "tag": "default_5_3_feature_mask_av2t_20260614",
+    "group": "5.3 feature mask",
+    "log_path": "results/repro_logs/default_5_3_feature_mask_av2t_20260614.log",
+    "done_training": true,
+    "last_update": 30000,
+    "num_train_points": 150,
+    "num_valid_points": 5,
+    "final_train_loss": 40.019,
+    "final_train_acc": 87.686,
+    "final_valid_loss": 37.415,
+    "final_valid_acc": 91.265,
+    "best_valid_loss": 37.415,
+    "best_valid_acc": 91.265,
+    "best_valid_update": 30000
   },
   {
     "tag": "default_5_3_feature_mask_v2t_20260613",
